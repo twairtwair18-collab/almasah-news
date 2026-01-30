@@ -1,3 +1,5 @@
+# almasah-news-
+موقع الماسة نيوز_اخبار اقتصاديه سياحيه اردنيه
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,21 +33,6 @@
             background-color: #f5f5f5;
             color: var(--dark-color);
             line-height: 1.6;
-        }
-        
-        /* إضافة التمرير السلس */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* تأثير تسليط الضوء على القسم النشط */
-        section:target {
-            animation: highlight 2s ease;
-        }
-        
-        @keyframes highlight {
-            0% { background-color: rgba(212, 175, 55, 0.2); }
-            100% { background-color: transparent; }
         }
         
         header {
@@ -100,12 +87,6 @@
             max-height: 100%;
             object-fit: contain;
             display: block;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .header-image-container img:hover {
-            transform: scale(1.02);
         }
         
         nav ul {
@@ -238,12 +219,6 @@
             object-fit: contain;
             padding: 10px;
             background-color: white;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .swiper-slide img:hover {
-            transform: scale(1.03);
         }
         
         .swiper-button-next, .swiper-button-prev {
@@ -325,23 +300,6 @@
             opacity: 0.9;
         }
         
-        /* الأقسام الجديدة */
-        .section-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .landmarks-section {
-            border-right: 5px solid #007a3d;
-        }
-        
-        .zain-section {
-            border-right: 5px solid #6d2077;
-        }
-        
         .tourism-news {
             margin-top: 30px;
         }
@@ -388,7 +346,6 @@
             height: 200px;
             background-size: cover;
             background-position: center;
-            cursor: pointer;
         }
         
         .news-card-content {
@@ -461,18 +418,12 @@
             border-radius: 10px;
             overflow: hidden;
             border: 3px solid var(--secondary-color);
-            cursor: pointer;
         }
         
         .article-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .article-image img:hover {
-            transform: scale(1.05);
         }
         
         .article-title {
@@ -559,13 +510,6 @@
         .latest-news-item {
             padding: 15px 0;
             border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: padding-right 0.3s, background-color 0.3s;
-        }
-        
-        .latest-news-item:hover {
-            padding-right: 10px;
-            background-color: #f9f9f9;
         }
         
         .latest-news-item:last-child {
@@ -681,16 +625,6 @@
             gap: 10px;
         }
         
-        .footer-contact a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-contact a:hover {
-            color: var(--secondary-color);
-        }
-        
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -698,63 +632,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.8;
             font-size: 0.9rem;
-        }
-        
-        /* أزرار التنقل السريع */
-        .quick-nav {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-        }
-        
-        .quick-nav-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-        
-        .quick-nav-btn:hover {
-            background-color: var(--secondary-color);
-            transform: scale(1.1);
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-            z-index: 1000;
-            text-decoration: none;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
-            transform: scale(1.1);
         }
         
         @media (max-width: 992px) {
@@ -778,10 +655,6 @@
             
             .article-title {
                 min-width: 100%;
-            }
-            
-            .quick-nav, .back-to-top {
-                display: none;
             }
         }
         
@@ -835,7 +708,7 @@
         }
     </style>
 </head>
-<body id="home">
+<body>
     <!-- رأس الموقع -->
     <header>
         <div class="header-container">
@@ -849,21 +722,19 @@
             
             <!-- الصورة تحت العنوان - تم التصحيح -->
             <div class="header-image-container">
-                <a href="#home">
-                    <img src="https://i.ibb.co/dscgRBbt/IMG-20260126-WA0002.jpg" alt="إعلان أردننا جنة - وزارة السياحة الأردنية">
-                </a>
+                <img src="https://i.ibb.co/dscgRBbt/IMG-20260126-WA0002.jpg" alt="إعلان أردننا جنة - وزارة السياحة الأردنية">
             </div>
             
             <!-- شريط التنقل -->
             <nav>
                 <ul>
-                    <li><a href="#home" class="active">الرئيسية</a></li>
-                    <li><a href="#tourism-news">أخبار وزارة السياحة</a></li>
-                    <li><a href="#landmarks">المعالم الأردنية</a></li>
-                    <li><a href="#zain-news">أخبار زين</a></li>
-                    <li><a href="#bank-news">أخبار البنوك</a></li>
-                    <li><a href="#toyota-news">أخبار تويوتا</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#" class="active">الرئيسية</a></li>
+                    <li><a href="#">أخبار وزارة السياحة</a></li>
+                    <li><a href="#">المعالم الأردنية</a></li>
+                    <li><a href="#">أخبار زين</a></li>
+                    <li><a href="#">أخبار البنوك</a></li>
+                    <li><a href="#">أخبار تويوتا</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
                 </ul>
             </nav>
         </div>
@@ -892,34 +763,22 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#home">
-                            <img src="https://i.ibb.co/bgNZvTZc/16562712-bd5e-4530-91f3-318b937a2858.jpg" alt="أورانج الأردن">
-                        </a>
+                        <img src="https://i.ibb.co/bgNZvTZc/16562712-bd5e-4530-91f3-318b937a2858.jpg" alt="أورانج الأردن">
                     </div>
                     <div class="swiper-slide">
-                        <a href="#tourism-news">
-                            <img src="https://i.ibb.co/qMW69kgq/309729-25-1662980917.png" alt="هيئة تنشيط السياحة">
-                        </a>
+                        <img src="https://i.ibb.co/qMW69kgq/309729-25-1662980917.png" alt="هيئة تنشيط السياحة">
                     </div>
                     <div class="swiper-slide">
-                        <a href="#home">
-                            <img src="https://i.ibb.co/0jk9tWt2/image.jpg" alt="جامعة فيلادلفيا">
-                        </a>
+                        <img src="https://i.ibb.co/0jk9tWt2/image.jpg" alt="جامعة فيلادلفيا">
                     </div>
                     <div class="swiper-slide">
-                        <a href="#zain-news">
-                            <img src="https://i.ibb.co/2YMhSbTM/image.jpg" alt="شركة زين">
-                        </a>
+                        <img src="https://i.ibb.co/2YMhSbTM/image.jpg" alt="شركة زين">
                     </div>
                     <div class="swiper-slide">
-                        <a href="#home">
-                            <img src="https://i.ibb.co/bjf5DxSH/s0pNLkue.jpg" alt="شركة البوتاس">
-                        </a>
+                        <img src="https://i.ibb.co/bjf5DxSH/s0p-NLkue.jpg" alt="شركة البوتاس">
                     </div>
                     <div class="swiper-slide">
-                        <a href="#landmarks">
-                            <img src="https://i.ibb.co/chMNrX9R/7bf8f758e5aea04e1196f2337cbab8a0.jpg" alt="مهرجان جرش">
-                        </a>
+                        <img src="https://i.ibb.co/chMNrX9R/7bf8f758e5aea04e1196f2337cbab8a0.jpg" alt="مهرجان جرش">
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
@@ -951,9 +810,7 @@
             <div class="special-article">
                 <div class="article-header">
                     <div class="article-image">
-                        <a href="#home">
-                            <img src="https://i.ibb.co/CKk7MmBJ/IMG-20260127-WA0004.jpg" alt="محمود عطالله الفرجات - مدير عام فندق الماريوت">
-                        </a>
+                        <img src="https://i.ibb.co/CKk7MmBJ/IMG-20260127-WA0004.jpg" alt="محمود عطالله الفرجات - مدير عام فندق الماريوت">
                     </div>
                     <div class="article-title">
                         <h2>الأردن لن يُصنَّف يومًا كوجهة سياحية غير مرغوبة</h2>
@@ -977,7 +834,7 @@
             </div>
 
             <!-- أخبار السياحة الأردنية -->
-            <section id="tourism-news" class="tourism-news section-container">
+            <div class="tourism-news">
                 <div class="section-title">
                     <i class="fas fa-monument"></i>
                     <h2>أحدث أخبار وزارة السياحة الأردنية 2025</h2>
@@ -985,7 +842,7 @@
                 
                 <div class="news-grid">
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1176&q=80')" onclick="scrollToSection('tourism-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1176&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag">تطوير</span>
                             <h3 class="news-card-title">تطوير مرافق الاستقبال في البتراء وجرش بتكلفة 5 ملايين دينار</h3>
@@ -998,7 +855,7 @@
                     </div>
                     
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1516475429286-8b4e2c8c7912?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('tourism-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1516475429286-8b4e2c8c7912?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag">فعاليات</span>
                             <h3 class="news-card-title">انطلاق مهرجان السياحة العلاجية في البحر الميت بمشاركة 50 عارضاً</h3>
@@ -1011,7 +868,7 @@
                     </div>
                     
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1589802829985-817e51171b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('tourism-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1589802829985-817e51171b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag">تعاون دولي</span>
                             <h3 class="news-card-title">توقيع اتفاقية مع اليونسكو لحماية 5 مواقع أثرية جديدة</h3>
@@ -1023,108 +880,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            
-            <!-- قسم المعالم الأردنية الجديد -->
-            <section id="landmarks" class="landmarks-section section-container">
-                <div class="section-title">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h2>المعالم الأردنية السياحية</h2>
-                </div>
-                
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1589802829985-817e51171b92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('landmarks')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag">البتراء</span>
-                            <h3 class="news-card-title">البتراء: المدينة الوردية وعجيبة الدنيا السابعة الجديدة</h3>
-                            <p class="news-card-excerpt">مدينة البتراء الأثرية، إحدى عجائب الدنيا السبع الجديدة، تُعتبر من أهم المواقع الأثرية في العالم. بنيت قبل أكثر من 2000 عام بواسطة الأنباط.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>أيقونة تاريخية</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('landmarks')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag">وادي رم</span>
-                            <h3 class="news-card-title">وادي رم: بوابة إلى المريخ على الأرض</h3>
-                            <p class="news-card-excerpt">يُعرف وادي رم بوادي القمر، وهو من أكثر المناطق الصحراوية جمالاً في العالم. تم تصوير العديد من الأفلام العالمية فيه لشبهه بسطح المريخ.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>تحفة طبيعية</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('landmarks')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag">البحر الميت</span>
-                            <h3 class="news-card-title">البحر الميت: أخفض نقطة على سطح الكرة الأرضية</h3>
-                            <p class="news-card-excerpt">البحر الميت ليس فقط أخفض نقطة على الأرض، بل يتميز بمياهه المالحة التي تمنح الطفو الطبيعي، وطينه العلاجي المشهور عالمياً.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>ظاهرة طبيعية فريدة</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم أخبار زين الجديد -->
-            <section id="zain-news" class="zain-section section-container">
-                <div class="section-title">
-                    <i class="fas fa-signal" style="color: #6d2077;"></i>
-                    <h2 style="color: #6d2077;">أخبار شركة زين الأردن 2025</h2>
-                </div>
-                
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('zain-news')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag zain">زين</span>
-                            <h3 class="news-card-title">زين تعلن عن استثمار 100 مليون دينار في شبكات الجيل الخامس</h3>
-                            <p class="news-card-excerpt">أعلنت شركة زين الأردن عن خطة استثمارية جديدة بقيمة 100 مليون دينار لتوسعة وتطوير شبكات الجيل الخامس في جميع أنحاء المملكة.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>15 مارس 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('zain-news')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag zain">زين</span>
-                            <h3 class="news-card-title">تعاون بين زين ووزارة السياحة لتطوير تطبيق ذكي للزوار</h3>
-                            <p class="news-card-excerpt">وقعت زين اتفاقية مع وزارة السياحة لتطوير تطبيق ذكي يقدم معلومات شاملة للسياح عن المعالم الأردنية، مع إرشادات صوتية وخرائط تفاعلية.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>12 مارس 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('zain-news')"></div>
-                        <div class="news-card-content">
-                            <span class="news-card-tag zain">زين</span>
-                            <h3 class="news-card-title">زين تطلق باقات إنترنت مخصصة للسياح بمزايا حصرية</h3>
-                            <p class="news-card-excerpt">أطلقت زين باقات إنترنت مخصصة للسياح تتيح لهم الاتصال بالإنترنت بسرعات عالية في جميع أنحاء الأردن، مع إرشادات سياحية مجانية.</p>
-                            <div class="news-card-date">
-                                <i class="far fa-clock"></i>
-                                <span>10 مارس 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
             
             <!-- أخبار بنك القاهرة عمان -->
-            <section id="bank-news" class="bank-section">
+            <div class="bank-section">
                 <div class="section-title">
                     <i class="fas fa-university" style="color: #cc0000;"></i>
                     <h2 style="color: #cc0000;">أخبار بنك القاهرة عمان 2025</h2>
@@ -1132,7 +891,7 @@
                 
                 <div class="news-grid">
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('bank-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag cairo">بنك القاهرة عمان</span>
                             <h3 class="news-card-title">بنك القاهرة عمان يحقق أرباحاً قياسية بنمو 25% في الربع الأول</h3>
@@ -1145,7 +904,7 @@
                     </div>
                     
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1563911302283-d2bc129e7570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')" onclick="scrollToSection('bank-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1563911302283-d2bc129e7570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag cairo">بنك القاهرة عمان</span>
                             <h3 class="news-card-title">إطلاق برنامج تمويل جديد لدعم المشاريع السياحية الصغيرة</h3>
@@ -1157,10 +916,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             
             <!-- أخبار شركة تويوتا -->
-            <section id="toyota-news" class="toyota-section">
+            <div class="toyota-section">
                 <div class="section-title">
                     <i class="fas fa-car" style="color: #eb0a1e;"></i>
                     <h2 style="color: #eb0a1e;">أخبار شركة تويوتا الأردن 2025</h2>
@@ -1168,7 +927,7 @@
                 
                 <div class="news-grid">
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80')" onclick="scrollToSection('toyota-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag toyota">تويوتا</span>
                             <h3 class="news-card-title">تويوتا تطلق الجيل الجديد من سياراتها الهجينة في الأردن</h3>
@@ -1181,7 +940,7 @@
                     </div>
                     
                     <div class="news-card">
-                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80')" onclick="scrollToSection('toyota-news')"></div>
+                        <div class="news-card-img" style="background-image: url('https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80')"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag toyota">تويوتا</span>
                             <h3 class="news-card-title">شراكة بين تويوتا وشركات تأجير السيارات لدعم السياحة</h3>
@@ -1193,7 +952,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
 
         <aside class="sidebar">
@@ -1203,30 +962,30 @@
                     الأكثر قراءة 2025
                 </h3>
                 <ul class="latest-news-list">
-                    <li class="latest-news-item" onclick="scrollToSection('tourism-news')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">إطلاق برنامج "أردننا جنة" لتدريب 500 مرشد سياحي</h4>
                         <div class="latest-news-date">14 مارس 2025</div>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('tourism-news')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">تقرير: السياحة الداخلية تشهد نمواً بنسبة 50% في 2025</h4>
                         <div class="latest-news-date">13 مارس 2025</div>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">افتتاح متحف التراث الأردني المتطور في عمان</h4>
                         <div class="latest-news-date">11 مارس 2025</div>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('zain-news')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">زين تعلن عن استثمار 100 مليون دينار في البنية التحتية</h4>
                         <div class="latest-news-date">8 مارس 2025</div>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">تدشين مسارات سياحية جديدة في وادي رم باستخدام الطاقة الشمسية</h4>
                         <div class="latest-news-date">7 مارس 2025</div>
                     </li>
                 </ul>
             </div>
             
-            <div class="ministry-highlight" onclick="scrollToSection('tourism-news')">
+            <div class="ministry-highlight">
                 <i class="fas fa-landmark"></i>
                 <h3>وزارة السياحة الأردنية 2025</h3>
                 <p>تعمل على تطوير القطاع السياحي في المملكة الأردنية الهاشمية، والترويج للمقومات السياحية المتنوعة التي يتمتع بها الأردن على المستويين المحلي والدولي، وتهدف لجعل الأردن وجهة سياحية رائدة في المنطقة.</p>
@@ -1238,45 +997,22 @@
                     حقائق عن الأردن
                 </h3>
                 <ul class="latest-news-list">
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">البتراء: إحدى عجائب الدنيا السبع الجديدة</h4>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">البحر الميت: أخفض نقطة على سطح الأرض</h4>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">الأردن يضم أكثر من 100,000 موقع أثري وسياحي</h4>
                     </li>
-                    <li class="latest-news-item" onclick="scrollToSection('landmarks')">
+                    <li class="latest-news-item">
                         <h4 class="latest-news-title">جرش: واحدة من أفضل المدن الرومانية المحفوظة</h4>
                     </li>
                 </ul>
             </div>
         </aside>
     </div>
-
-    <!-- أزرار التنقل السريع -->
-    <div class="quick-nav">
-        <a href="#home" class="quick-nav-btn" title="الرئيسية">
-            <i class="fas fa-home"></i>
-        </a>
-        <a href="#tourism-news" class="quick-nav-btn" title="أخبار السياحة">
-            <i class="fas fa-monument"></i>
-        </a>
-        <a href="#landmarks" class="quick-nav-btn" title="المعالم">
-            <i class="fas fa-map-marked-alt"></i>
-        </a>
-        <a href="#zain-news" class="quick-nav-btn" title="أخبار زين">
-            <i class="fas fa-signal"></i>
-        </a>
-        <a href="#contact" class="quick-nav-btn" title="اتصل بنا">
-            <i class="fas fa-phone"></i>
-        </a>
-    </div>
-    
-    <a href="#home" class="back-to-top" title="العودة للأعلى">
-        <i class="fas fa-chevron-up"></i>
-    </a>
 
     <footer>
         <div class="footer-container">
@@ -1295,23 +1031,19 @@
             <div class="footer-links">
                 <h4>روابط سريعة</h4>
                 <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#tourism-news">أخبار السياحة</a></li>
-                    <li><a href="#landmarks">المعالم الأردنية</a></li>
-                    <li><a href="#zain-news">أخبار زين</a></li>
-                    <li><a href="#bank-news">أخبار البنوك</a></li>
-                    <li><a href="#toyota-news">أخبار تويوتا</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">أخبار السياحة</a></li>
+                    <li><a href="#">أخبار زين</a></li>
+                    <li><a href="#">أخبار البنوك</a></li>
+                    <li><a href="#">أخبار تويوتا</a></li>
                 </ul>
             </div>
             
-            <div class="footer-contact" id="contact">
+            <div class="footer-contact">
                 <h4>اتصل بنا</h4>
                 <p><i class="fas fa-map-marker-alt"></i> عمان، الأردن</p>
-                <p><i class="fas fa-phone"></i> <a href="tel:0791561027">0791561027</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:0797696195">0797696195</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:0796901764">0796901764</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:yaserammar495@gmail.com">yaserammar495@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> 0096261234567</p>
+                <p><i class="fas fa-envelope"></i> info@almasahnews.com</p>
                 <p><i class="fas fa-clock"></i> الأحد - الخميس: 8:00 - 16:00</p>
             </div>
         </div>
@@ -1342,52 +1074,6 @@
             loop: true,
             effect: 'slide',
             speed: 600,
-        });
-
-        // دالة للتمرير السلس إلى الأقسام
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
-        // تحديث الروابط النشطة عند التمرير
-        window.addEventListener('scroll', function() {
-            let sections = document.querySelectorAll('section, .bank-section, .toyota-section');
-            let navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // عند تحميل الصفحة، حدد القسم النشط بناءً على الموقع
-        document.addEventListener('DOMContentLoaded', function() {
-            // إضافة حدث النقر لجميع الروابط في القائمة الجانبية
-            document.querySelectorAll('.latest-news-item, .ministry-highlight').forEach(item => {
-                item.style.cursor = 'pointer';
-            });
-            
-            // جعل الروابط في القائمة الجانبية قابلة للنقر
-            document.querySelectorAll('.latest-news-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    // التمرير إلى القسم المناسب
-                    scrollToSection('tourism-news');
-                });
-            });
         });
     </script>
 </body>
