@@ -1261,7 +1261,7 @@
                 max-width: 200px;
             }
         }
- {
+
         @media (max-width: 480px) {
             .header-image-container {
                 max-height: 100px;
@@ -1416,7 +1416,7 @@
                 <div class="article-header">
                     <div class="article-image">
                         <a href="#home">
-                            <img src="https://i.ibb.co/5W7k7NJy/IMG-20260131-WA0000.jpg" alt="هيئة تنشيط السياحة تشارك في معرض الجامعات الأردنية في السعودية" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
+                            <img src="https://i.ibb.co/wNv7v92X/IMG-20260131-WA0000.jpg" alt="هيئة تنشيط السياحة تشارك في معرض الجامعات الأردنية في السعودية" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
                         </a>
                     </div>
                     <div class="article-title">
@@ -1432,14 +1432,13 @@
                 </div>
             </div>
 
-            <!-- هذا هو القسم الذي تم تعديل صورة الملك فيه -->
             <section id="tourism-news" class="tourism-news section-container">
                 <div class="section-title">
                     <i class="fas fa-monument"></i>
+                    <h2>أخبار السياحة الأردنية</h2>
                 </div>
                 <div class="news-grid">
                     <div class="news-card">
-                        <!-- هنا تم تغيير صورة الملك -->
                         <div class="news-card-img" style="background-image: url('https://i.ibb.co/SCNsVK4/IMG-20260131-WA0001.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #fff;"></div>
                         <div class="news-card-content">
                             <span class="news-card-tag">مناسبات وطنية</span>
@@ -1447,8 +1446,7 @@
                             <p class="news-card-excerpt">بمناسبة عيد ميلاد حضرة صاحب الجلالة الهاشمية الملك عبد الله الثاني ابن الحسين المعظم الرابع والستون، ترفع هيئة تنشيط السياحة أسمى آيات التهنئة والتبريك، مقرونة بأصدق مشاعر الولاء والانتماء.</p>
                             <div class="news-card-date">
                                 <i class="far fa-clock"></i>
-                                <span>
-                                </span>
+                                <span>30 يناير 2025</span>
                             </div>
                             <a href="javascript:void(0)" class="read-more-btn" onclick="showNewsDetail('tourism-detail-4')">اقرأ المزيد</a>
                         </div>
@@ -1976,7 +1974,7 @@
                 title: 'هيئة تنشيط السياحة تهنئ جلالة الملك بعيد ميلاده الرابع والستون',
                 category: 'مناسبات وطنية',
                 date: '30 يناير 2025',
-                image: 'https://i.ibb.co/SCNsVK4/IMG-20260131-WA0001.jpg', // هنا تم تغيير صورة الملك
+                image: 'https://i.ibb.co/SCNsVK4/IMG-20260131-WA0001.jpg',
                 content: '<p>بمناسبة عيد ميلاد حضرة صاحب الجلالة الهاشمية الملك عبد الله الثاني ابن الحسين المعظم الرابع والستون، ترفع هيئة تنشيط السياحة، ممثلة برئيس مجلس إدارة الهيئة ومديرها العام وأعضاء مجلس الإدارة وكافة العاملين فيها، إلى مقام جلالته السامي أسمى آيات التهنئة والتبريك، مقرونة بأصدق مشاعر الولاء والانتماء.</p><p>وأكدت الهيئة اعتزازها العميق بالقيادة الهاشمية الحكيمة، وبالرؤية الملكية الثاقبة التي أسهمت في ترسيخ مكانة الأردن إقليميًا ودوليًا، وتعزيز حضوره كوجهة سياحية آمنة ومتميزة، تستند إلى إرث حضاري عريق وتنوع ثقافي وإنساني فريد.</p><p>وأشادت هيئة تنشيط السياحة بالدعم المتواصل الذي يوليه جلالة الملك للقطاع السياحي، باعتباره أحد الركائز الأساسية للاقتصاد الوطني، ومصدرًا رئيسيًا لفرص العمل والتنمية المستدامة في مختلف محافظات المملكة.</p><p>وسألت الهيئة المولى عز وجل أن يحفظ جلالة الملك، ويمتعه بموفور الصحة والعافية، وأن يمده بعونٍ من عنده لمواصلة مسيرة العطاء والإنجاز، وأن يديم على الأردن نعمة الأمن والاستقرار في ظل القيادة الهاشمية.</p><p>حفظ الله الأردن، وحفظ قائد الوطن.</p>'
             },
             'tourism-detail-1': {
@@ -2114,39 +2112,40 @@
             }
         };
 
-        try {
-            var swiper = new Swiper(".mySwiper", {
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true
-                },
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false
-                },
-                loop: true,
-                effect: 'slide',
-                speed: 600,
-                preloadImages: true,
-                lazy: {
-                    loadPrevNext: true
-                },
-                on: {
-                    init: function() {
-                        console.log('Swiper initialized successfully');
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                var swiper = new Swiper(".mySwiper", {
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
                     },
-                    error: function(error) {
-                        console.error('Swiper error:', error);
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                    loop: true,
+                    effect: 'slide',
+                    speed: 600,
+                    preloadImages: true,
+                    lazy: {
+                        loadPrevNext: true
                     }
-                }
-            });
-        } catch (error) {
-            console.error('Failed to initialize Swiper:', error);
-        }
+                });
+                console.log('Swiper initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize Swiper:', error);
+            }
+
+            initThemeToggle();
+            animateCounters();
+            initEventCountdown();
+            setupTicker();
+            setupNavScroll();
+        });
 
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
@@ -2238,32 +2237,23 @@
 
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
-
+            
             counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-count');
-                    const count = +counter.innerText;
-                    const increment = Math.ceil(target / speed);
-
-                    if (count < target) {
-                        counter.innerText = Math.min(count + increment, target);
-                        setTimeout(updateCount, 10);
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
                     } else {
-                        counter.innerText = target.toLocaleString();
+                        counter.textContent = Math.floor(current).toLocaleString();
                     }
-                };
-
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            updateCount();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                });
-
-                observer.observe(counter.parentElement);
+                }, 16);
             });
         }
 
@@ -2338,38 +2328,11 @@
             }
 
             updateCountdowns();
-            setInterval(updateCountdowns, 86400000); // تحديث كل 24 ساعة
+            setInterval(updateCountdowns, 86400000);
         }
 
-        window.addEventListener('scroll', function() {
-            let sections = document.querySelectorAll('section, .bank-section, .toyota-section, .electricity-section, .capital-bank-section, .stats-section, .events-section');
-            let navLinks = document.querySelectorAll('nav a');
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        document.getElementById('news-detail-container').addEventListener('click', function(e) {
-            if (e.target.id === 'news-detail-container') {
-                closeNewsDetail();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const ticker = document.querySelector>('.ticker-content ul');
+        function setupTicker() {
+            const ticker = document.querySelector('.ticker-content ul');
             if (ticker) {
                 ticker.addEventListener('mouseenter', () => {
                     ticker.style.animationPlayState = 'paused';
@@ -2398,89 +2361,44 @@
             document.querySelectorAll('.latest-news-item, .ministry-highlight').forEach(item => {
                 item.style.cursor = 'pointer';
             });
+        }
 
-            document.querySelectorAll('img').forEach(img => {
-                img.addEventListener('error', function() {
-                    this.onerror = null;
-                    this.src = 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80';
-                    this.alt = 'صورة افتراضية - الأردن';
+        function setupNavScroll() {
+            window.addEventListener('scroll', function() {
+                let sections = document.querySelectorAll('section, .bank-section, .toyota-section, .electricity-section, .capital-bank-section, .stats-section, .events-section');
+                let navLinks = document.querySelectorAll('nav a');
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
                 });
             });
+        }
 
-            const sections = ['home', 'tourism-news', 'tourism-stats', 'upcoming-events', 'landmarks', 'zain-news', 'bank-news', 'toyota-news', 'electricity-news', 'capital-bank-news', 'contact'];
-            sections.forEach(section => {
-                const element = document.getElementById(section);
-                if (!element) {
-                    console.warn('Section not found:', section);
-                }
-            });
-
-            animateCounters();
-            initThemeToggle();
-            initEventCountdown()      
-       كود تحريك الأرقام الجديد ===========
-document.addEventListener('DOMContentLoaded', function() {
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number');
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            const duration = 2000;
-            const step = target / (duration / 16);خ
-            
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    counter.textContent = target.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                // =========== كود تحريك الأرقام الجديد ===========
-document.addEventListener('DOMContentLoaded', function() {
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number');
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    counter.textContent = target.toLocaleString();
-                    clearInterval(timer);
-                } else {
-                    counter.textContent = Math.floor(current).toLocaleString();
-                }
-            }, 16);
-        });
-    }
-    
-    // تشغيل عند الوصول للقسم
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                observer.unobserve(entry.target);
+        document.getElementById('news-detail-container').addEventListener('click', function(e) {
+            if (e.target.id === 'news-detail-container') {
+                closeNewsDetail();
             }
         });
-    }, { threshold: 0.5 });
-    
-    const statsSection = document.getElementById('tourism-stats');
-    if (statsSection) {
-        observer.observe(statsSection);
-    }
-});
-// =========== نهاية الكود الجديد ===========
 
-// تأكد من تشغيل الدوال الأصلية
-if (typeof animateCounters === 'function') animateCounters();
-if (typeof initThemeToggle === 'function') initThemeToggle();
-if (typeof initEventCountdown === 'function') initEventCountdown();
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.onerror = null;
+                this.src = 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80';
+                this.alt = 'صورة افتراضية - الأردن';
+            });
+        });
     </script>
 </body>
 </html>
