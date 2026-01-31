@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ت٧٨<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -2418,6 +2418,47 @@
             animateCounters();
             initThemeToggle();
             initEventCountdown();
+
+// =========== كود تحريك الأرقام الجديد ===========
+document.addEventListener('DOMContentLoaded', function() {
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        });
+    }
+    
+    // تشغيل العد عند الوصول للقسم
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    const statsSection = document.getElementById('tourism-stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+});
+// =========== نهاية الكود الجديد ===========
         });
     </script>
 </body>
