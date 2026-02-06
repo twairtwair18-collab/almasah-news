@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <style>
+        /* أنماط CSS الأصلية من موقعك (مختصرة) */
         * {
             margin: 0;
             padding: 0;
@@ -52,6 +53,443 @@
             }
         }
 
+        /* ... باقي أنماط موقعك الأصلية ... */
+
+        /* أنماط قسم الأخبار الجديد - تم تحسينها لتناسب موقعك */
+        .tourism-featured-news {
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        .featured-news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .featured-news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .featured-news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .featured-news-img {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-news-card:hover .featured-news-img img {
+            transform: scale(1.05);
+        }
+
+        .featured-news-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            z-index: 2;
+        }
+
+        .featured-news-content {
+            padding: 25px;
+        }
+
+        .featured-news-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 66px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured-news-excerpt {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured-news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .featured-news-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .featured-news-date {
+            color: var(--gray-color);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* تصميم المربعات القابلة للطي */
+        .compact-news-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-right: 5px solid var(--secondary-color);
+        }
+
+        .compact-news-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .compact-news-title i {
+            color: var(--secondary-color);
+        }
+
+        .news-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .news-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .news-box:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 122, 61, 0.1);
+            background: white;
+        }
+
+        .news-box.active {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .news-box-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .news-box-header-content {
+            flex: 1;
+        }
+
+        .news-box-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .news-box-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .expand-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f0f0f0;
+        }
+
+        .news-box.active .expand-icon {
+            transform: rotate(180deg);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .news-box-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            padding: 0 20px;
+            background: white;
+        }
+
+        .news-box-content.expanded {
+            max-height: 2000px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .news-box-text {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .news-box-highlight {
+            background: #f8f9fa;
+            padding: 15px;
+            border-right: 4px solid var(--secondary-color);
+            margin: 15px 0;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-radius: 8px;
+        }
+
+        .news-box-source {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.95rem;
+        }
+
+        /* نافذة تفاصيل الخبر */
+        .news-detail-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .news-detail-content {
+            background-color: #fff;
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-header {
+            position: relative;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .detail-header-content {
+            color: #fff;
+            width: 100%;
+        }
+
+        .detail-tag {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .detail-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .detail-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .detail-body {
+            padding: 40px;
+        }
+
+        .detail-body p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .close-detail {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .close-detail:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* تحسين التجاوب */
+        @media (max-width: 768px) {
+            .featured-news-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .compact-news-section {
+                padding: 20px;
+            }
+            
+            .compact-news-title {
+                font-size: 1.5rem;
+            }
+            
+            .news-box-header {
+                padding: 15px;
+            }
+            
+            .featured-news-content {
+                padding: 20px;
+            }
+            
+            .featured-news-title {
+                font-size: 1.2rem;
+            }
+            
+            .detail-header {
+                height: 300px;
+                padding: 20px;
+            }
+            
+            .detail-title {
+                font-size: 1.8rem;
+            }
+            
+            .detail-body {
+                padding: 25px;
+            }
+        }
+
+        /* ربط مع الأنماط الموجودة */
+        body.dark-mode .featured-news-card,
+        body.dark-mode .compact-news-section,
+        body.dark-mode .news-box,
+        body.dark-mode .news-box-header,
+        body.dark-mode .news-detail-content {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-color: #333;
+        }
+
+        body.dark-mode .featured-news-title,
+        body.dark-mode .compact-news-title,
+        body.dark-mode .news-box-title,
+        body.dark-mode .detail-title {
+            color: #4CAF50;
+        }
+
+        body.dark-mode .featured-news-excerpt,
+        body.dark-mode .news-box-text,
+        body.dark-mode .detail-body p {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .news-box-content {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        body.dark-mode .news-box-highlight {
+            background-color: #2a2a2a;
+            border-color: #4CAF50;
+        }
+
+        body.dark-mode .detail-body {
+            background-color: #1e1e1e;
+        }
+
+        /* استمرار أنماط موقعك الأصلية */
         header {
             background: linear-gradient(to right, var(--primary-color), #005a2e);
             color: #fff;
@@ -516,109 +954,6 @@
 
         .read-more-btn:hover {
             background-color: var(--secondary-color);
-        }
-
-        .news-detail-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .news-detail-content {
-            background-color: #fff;
-            max-width: 900px;
-            margin: 40px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .detail-header {
-            position: relative;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 30px;
-        }
-
-        .detail-header-content {
-            color: #fff;
-            width: 100%;
-        }
-
-        .detail-tag {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 4px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .detail-title {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        .detail-meta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .detail-body {
-            padding: 40px;
-        }
-
-        .detail-body p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .close-detail {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            z-index: 10;
-        }
-
-        .close-detail:hover {
-            background-color: rgba(0, 0, 0, 0.9);
         }
 
         .stats-section {
@@ -1505,6 +1840,185 @@
                 </div>
             </div>
 
+            <!-- ==================== قسم الأخبار الجديد ==================== -->
+            <section class="tourism-featured-news">
+                <div class="section-title">
+                    <i class="fas fa-newspaper"></i>
+                    <h2>أخبار سياحية رئيسية</h2>
+                </div>
+                
+                <div class="featured-news-container">
+                    <!-- الخبر الأول: المغطس -->
+                    <div class="featured-news-card" onclick="showNewsDetail('maghtas-detail')">
+                        <div class="featured-news-img">
+                            <span class="featured-news-category">تحليل</span>
+                            <img src="https://i.ibb.co/9H9xcD4Y/IMG-20260206-WA0004.jpg" alt="المغطس" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
+                        </div>
+                        <div class="featured-news-content">
+                            <h3 class="featured-news-title">المغطس: قدسية المكان ومسؤولية التطوير</h3>
+                            <p class="featured-news-excerpt">بقلم: هاني الدباس - المغطس بكل المعايير هو اكبر من مجرد موقع ديني أثري، هو مساحة روحية عميقة الجذور في الوعي الإنساني، ومهد لحدث مفصلي في التاريخ.</p>
+                            <div class="featured-news-meta">
+                                <div class="featured-news-author">
+                                    <i class="fas fa-user-edit"></i>
+                                    <span>هاني الدباس</span>
+                                </div>
+                                <div class="featured-news-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>6 فبراير 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الخبر الثاني: لقاء المعايطة -->
+                    <div class="featured-news-card" onclick="showNewsDetail('maayata-detail')">
+                        <div class="featured-news-img">
+                            <span class="featured-news-category">اجتماعات دولية</span>
+                            <img src="https://i.ibb.co/fdY07YSH/IMG-20260206-WA0003.jpg" alt="لقاء المعايطة" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
+                        </div>
+                        <div class="featured-news-content">
+                            <h3 class="featured-news-title">المعايطة يلتقي الأمينة العامة لمنظمة الأمم المتحدة للسياحة</h3>
+                            <p class="featured-news-excerpt">على هامش معرض فيتور الدولي للسياحة في مدريد، التقى المدير العام لهيئة تنشيط السياحة رمزي المعايطة بالأمينة العامة لمنظمة الأمم المتحدة للسياحة.</p>
+                            <div class="featured-news-meta">
+                                <div class="featured-news-author">
+                                    <i class="fas fa-newspaper"></i>
+                                    <span>المركز الإعلامي</span>
+                                </div>
+                                <div class="featured-news-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>6 فبراير 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المربعات القابلة للطي -->
+                <div class="compact-news-section">
+                    <h2 class="compact-news-title">
+                        <i class="fas fa-bars"></i>
+                        أخبار سياحية أخرى
+                    </h2>
+                    
+                    <div class="news-boxes">
+                        <!-- المربع 1: المغطس -->
+                        <div class="news-box" id="maghtas-box">
+                            <div class="news-box-header">
+                                <div class="news-box-header-content">
+                                    <div class="news-box-title">المغطس: قدسية المكان ومسؤولية التطوير</div>
+                                    <div class="news-box-date">
+                                        <i class="far fa-clock"></i>
+                                        <span>بقلم: هاني الدباس | 6 فبراير 2026</span>
+                                    </div>
+                                </div>
+                                <div class="expand-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="news-box-content">
+                                <p class="news-box-text">المغطس بكل المعايير هو اكبر من مجرد موقع ديني أثري، هو مساحة روحية عميقة الجذور في الوعي الإنساني، ومهد لحدث مفصلي في التاريخ، حيث معمودية السيد المسيح عليه السلام.</p>
+                                
+                                <div class="news-box-highlight">
+                                    اكتسب هذا الموقع اهتمام العالم بعد اعتراف الفاتيكان والكنائس العالمية مجتمعة، ومنظمة اليونسكو، كموقع محدد لمعمودية السيد المسيح.
+                                </div>
+                                
+                                <p class="news-box-text">رغم هذه القيمة الاستثنائية، مازال محيط المغطس بحاجة ماسة إلى تطوير خدمي شامل يرتقي لقدسيته ومكانته العالمية، فالتجربة الروحية لا تكتمل دون بنىً تحتية، تشمل مراكز استقبال، ومواقف سيارات مهيأة، ومساحات استراحة هادئة، ومرافق صحية لائقة، وخدمات معلومات سياحية متخصصة، إضافة إلى مطاعم ومقاهٍ تراعي خصوصية الزوار، وتنسجم مع طبيعة المكان، دون إخلال بهيبته أو تشويه لقيمته الروحية.</p>
+                                
+                                <p class="news-box-text">عند المقارنة مع الموقع المقابل في فلسطين، يتضح أن المنافسة في السياحة الدينية لا تعتمد على القدسية وحدها، بل تنطلق من الإدارة الحصيفة ومستوى الخدمات، وآليات التسويق، ففي الجانب الآخر، يتم تقديم تجربة سياحية منظمة، تعتمد على كثافة الخدمات، وسهولة الوصول، وباقات جاهزة ضمن برامج السياحة الدينية العالمية، ما ينعكس مباشرة على أعداد الزوار، وانسيابية الحركة، وفترات أطول من الزيارة عبر الحج المسيحي المتواصل.</p>
+                                
+                                <p class="news-box-text">ان الحفاظ على قدسية المغطس مبدأ جوهري يحكم أي عمليات للتطوير ، دون مساس بروح المكان وليس تحويل المكان إلى منتج تجاري سياحي مجرد ، بل المطلوب الان بناء خدمات وظيفية واعية، تحترم قدسية المغطس ، وتدعم الزائر في رحلته الروحية دون تشويش أو ابتذال بصري أو سلوكي، فالتوازن بين الصون والتطوير هنا مسؤولية أخلاقية ووطنية.</p>
+                                
+                                <p class="news-box-text">أما على صعيد الجذب السياحي، فإن الفرصة الحقيقية تكمن في التوجه نحو أسواق بعيدة جغرافياً لكنها عميقة الارتباط روحياً، مثل اسيا ، ودول أمريكا اللاتينية، إضافة إلى المسيحيين العاملين في دول الخليج العربي. ان الولوج إلى هذه الأسواق لا يمكن ان يكون تلقائياً مجرداً من التخطيط والقدرات التسويقية بل يتحقق عبر تنسيق احترافي مع شركات الطيران، ومكاتب السياحة الخارجية، والمؤسسات الدينية، لبناء برامج سياحة دينية متخصصة، تبدأ من الأردن، وتتمحور حول المغطس بوصفه جوهر التجربة الروحية.</p>
+                                
+                                <p class="news-box-text">إن تكامل الجهود بين الجهات الرسمية والقطاع الخاص، وتوحيد الرؤية بين القدسية والتطوير، كفيل بإعادة تموضع المغطس على خارطة السياحة الدينية العالمية، ليس كموقع زيارة عابر، بل كوجهة إيمانية متكاملة، تحفظ التاريخ، وتصون القدسية، وتخاطب العالم بلغة التسامح الديني والتعددية التي بني عليها الأردن وتواصلت رسالته للعالم .</p>
+                            </div>
+                        </div>
+
+                        <!-- المربع 2: لقاء المعايطة -->
+                        <div class="news-box" id="maayata-box">
+                            <div class="news-box-header">
+                                <div class="news-box-header-content">
+                                    <div class="news-box-title">المعايطة يلتقي الأمينة العامة لمنظمة الأمم المتحدة للسياحة</div>
+                                    <div class="news-box-date">
+                                        <i class="far fa-clock"></i>
+                                        <span>المركز الإعلامي | 6 فبراير 2026</span>
+                                    </div>
+                                </div>
+                                <div class="expand-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="news-box-content">
+                                <p class="news-box-text">على هامش معرض فيتور الدولي للسياحة في مدريد، التقى المدير العام لهيئة تنشيط السياحة رمزي المعايطة بالأمينة العامة لمنظمة الأمم المتحدة للسياحة شيخة النويس، بحضور السفيرة الأردنية لدى إسبانيا رغد السقا وعدد من كبار مسؤولي المنظمة.</p>
+                                
+                                <div class="news-box-highlight">
+                                    جرى خلال اللقاء استعراض المنتج السياحي الأردني المتنوع، والتأكيد على التزام المملكة بالسياحة المستدامة وحماية التراث الثقافي والطبيعي.
+                                </div>
+                                
+                                <p class="news-box-text">كما ناقش الجانبان سبل تعزيز التعاون في مجالات بناء القدرات، وتطوير البيانات السياحية، وإدارة المواقع السياحية، وأكدا أهمية استمرار الشراكة لدعم التنمية السياحية المستدامة وتنمية رأس المال البشري، مع الاتفاق على مواصلة الحوار ودعم المبادرات المشتركة بما يخدم مستقبل القطاع السياحي.</p>
+                                
+                                <div class="news-box-source">المصدر: المركز الإعلامي لهيئة تنشيط السياحة</div>
+                            </div>
+                        </div>
+
+                        <!-- المربع 3: تهنئة الملك -->
+                        <div class="news-box" id="king-box">
+                            <div class="news-box-header">
+                                <div class="news-box-header-content">
+                                    <div class="news-box-title">تهنئة الملك لنجاح موسم السياحة الدينية</div>
+                                    <div class="news-box-date">
+                                        <i class="far fa-clock"></i>
+                                        <span>الدبلوماسية الأردنية | 5 فبراير 2026</span>
+                                    </div>
+                                </div>
+                                <div class="expand-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="news-box-content">
+                                <p class="news-box-text">هنأ جلالة الملك عبدالله الثاني القائمين على مواقع السياحة الدينية في المملكة، ولا سيما موقع المغطس، لنجاح الموسم السياحي الديني الأخير الذي شهد زيادة في أعداد الزوار وصلت إلى 35% مقارنة بالعام الماضي.</p>
+                                
+                                <div class="news-box-highlight">
+                                    وأشاد جلالته في برقية التهنئة بالجهود الكبيرة التي تبذلها كوادر هيئة تنشيط السياحة ووزارة السياحة والآثار في تطوير الخدمات المقدمة للزوار مع الحفاظ على الطابع الروحي والأثري لهذه المواقع التاريخية.
+                                </div>
+                                
+                                <p class="news-box-text">وأكد جلالة الملك على أهمية الاستمرار في تحسين البنى التحتية والخدمات المساندة للسياح، مع التأكيد على الحفاظ على الهوية الروحية والتاريخية لمواقع السياحة الدينية في الأردن، والتي تشكل جزءاً أساسياً من رسالة المملكة في التسامح والتعايش.</p>
+                                
+                                <div class="news-box-source">المصدر: الديوان الملكي الهاشمي</div>
+                            </div>
+                        </div>
+
+                        <!-- المربع 4: هيئة تنشيط السياحة -->
+                        <div class="news-box" id="tourism-authority-box">
+                            <div class="news-box-header">
+                                <div class="news-box-header-content">
+                                    <div class="news-box-title">هيئة تنشيط السياحة تشارك في معرض الجامعات الأردنية</div>
+                                    <div class="news-box-date">
+                                        <i class="far fa-clock"></i>
+                                        <span>التعليم والسياحة | 4 فبراير 2026</span>
+                                    </div>
+                                </div>
+                                <div class="expand-icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="news-box-content">
+                                <p class="news-box-text">شاركت هيئة تنشيط السياحة الأردنية في معرض الجامعات الأردنية الذي أقيم في عمان الأسبوع الماضي، بهدف التعريف بالفرص الوظيفية في قطاع السياحة وتشجيع الطلبة على التخصص في المجالات السياحية والتراثية.</p>
+                                
+                                <div class="news-box-highlight">
+                                    وشملت مشاركة الهيئة تقديم عروض عن البرامج التدريبية المتاحة، والمنح الدراسية في مجال السياحة، بالإضافة إلى عرض فيلم وثائقي عن أهم المواقع السياحية في المملكة وأبرز المشاريع التطويرية الجارية.
+                                </div>
+                                
+                                <p class="news-box-text">وأكد ممثلو الهيئة أن قطاع السياحة يعد من القطاعات الواعدة في الأردن، ويوفر آلاف الفرص الوظيفية للشباب الأردني في مجالات مختلفة تشمل الإرشاد السياحي، وإدارة الفنادق، والتسويق السياحي، وإدارة المواقع التراثية.</p>
+                                
+                                <div class="news-box-source">المصدر: هيئة تنشيط السياحة الأردنية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==================== نهاية قسم الأخبار الجديد ==================== -->
+
             <section id="tourism-news" class="tourism-news section-container">
                 <div class="section-title">
                     <i class="fas fa-monument"></i>
@@ -2003,6 +2517,7 @@
         </aside>
     </div>
 
+    <!-- نافذة تفاصيل الأخبار الجديدة -->
     <div id="news-detail-container" class="news-detail-container"></div>
 
     <div class="quick-nav">
@@ -2064,6 +2579,436 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // بيانات تفاصيل الأخبار الجديدة
+        const newNewsDetails = {
+            'maghtas-detail': {
+                title: 'المغطس: قدسية المكان ومسؤولية التطوير',
+                category: 'تحليل',
+                date: '6 فبراير 2026',
+                image: 'https://i.ibb.co/9H9xcD4Y/IMG-20260206-WA0004.jpg',
+                author: 'هاني الدباس',
+                content: `
+                    <p>المغطس بكل المعايير هو اكبر من مجرد موقع ديني أثري، هو مساحة روحية عميقة الجذور في الوعي الإنساني، ومهد لحدث مفصلي في التاريخ، حيث معمودية السيد المسيح عليه السلام.</p>
+                    <div class="news-box-highlight">اكتسب هذا الموقع اهتمام العالم بعد اعتراف الفاتيكان والكنائس العالمية مجتمعة، ومنظمة اليونسكو، كموقع محدد لمعمودية السيد المسيح.</div>
+                    <p>رغم هذه القيمة الاستثنائية، مازال محيط المغطس بحاجة ماسة إلى تطوير خدمي شامل يرتقي لقدسيته ومكانته العالمية، فالتجربة الروحية لا تكتمل دون بنىً تحتية، تشمل مراكز استقبال، ومواقف سيارات مهيأة، ومساحات استراحة هادئة، ومرافق صحية لائقة، وخدمات معلومات سياحية متخصصة، إضافة إلى مطاعم ومقاهٍ تراعي خصوصية الزوار، وتنسجم مع طبيعة المكان، دون إخلال بهيبته أو تشويه لقيمته الروحية.</p>
+                    <p>عند المقارنة مع الموقع المقابل في فلسطين، يتضح أن المنافسة في السياحة الدينية لا تعتمد على القدسية وحدها، بل تنطلق من الإدارة الحصيفة ومستوى الخدمات، وآليات التسويق، ففي الجانب الآخر، يتم تقديم تجربة سياحية منظمة، تعتمد على كثافة الخدمات، وسهولة الوصول، وباقات جاهزة ضمن برامج السياحة الدينية العالمية، ما ينعكس مباشرة على أعداد الزوار، وانسيابية الحركة، وفترات أطول من الزيارة عبر الحج المسيحي المتواصل.</p>
+                    <p>ان الحفاظ على قدسية المغطس مبدأ جوهري يحكم أي عمليات للتطوير ، دون مساس بروح المكان وليس تحويل المكان إلى منتج تجاري سياحي مجرد ، بل المطلوب الان بناء خدمات وظيفية واعية، تحترم قدسية المغطس ، وتدعم الزائر في رحلته الروحية دون تشويش أو ابتذال بصري أو سلوكي، فالتوازن بين الصون والتطوير هنا مسؤولية أخلاقية ووطنية.</p>
+                    <p>أما على صعيد الجذب السياحي، فإن الفرصة الحقيقية تكمن في التوجه نحو أسواق بعيدة جغرافياً لكنها عميقة الارتباط روحياً، مثل اسيا ، ودول أمريكا اللاتينية، إضافة إلى المسيحيين العاملين في دول الخليج العربي. ان الولوج إلى هذه الأسواق لا يمكن ان يكون تلقائياً مجرداً من التخطيط والقدرات التسويقية بل يتحقق عبر تنسيق احترافي مع شركات الطيران، ومكاتب السياحة الخارجية، والمؤسسات الدينية، لبناء برامج سياحة دينية متخصصة، تبدأ من الأردن، وتتمحور حول المغطس بوصفه جوهر التجربة الروحية.</p>
+                    <p>إن تكامل الجهود بين الجهات الرسمية والقطاع الخاص، وتوحيد الرؤية بين القدسية والتطوير، كفيل بإعادة تموضع المغطس على خارطة السياحة الدينية العالمية، ليس كموقع زيارة عابر، بل كوجهة إيمانية متكاملة، تحفظ التاريخ، وتصون القدسية، وتخاطب العالم بلغة التسامح الديني والتعددية التي بني عليها الأردن وتواصلت رسالته للعالم .</p>
+                `
+            },
+            'maayata-detail': {
+                title: 'المعايطة يلتقي الأمينة العامة لمنظمة الأمم المتحدة للسياحة',
+                category: 'اجتماعات دولية',
+                date: '6 فبراير 2026',
+                image: 'https://i.ibb.co/fdY07YSH/IMG-20260206-WA0003.jpg',
+                author: 'المركز الإعلامي',
+                content: `
+                    <p>على هامش معرض فيتور الدولي للسياحة في مدريد، التقى المدير العام لهيئة تنشيط السياحة رمزي المعايطة بالأمينة العامة لمنظمة الأمم المتحدة للسياحة شيخة النويس، بحضور السفيرة الأردنية لدى إسبانيا رغد السقا وعدد من كبار مسؤولي المنظمة.</p>
+                    <div class="news-box-highlight">جرى خلال اللقاء استعراض المنتج السياحي الأردني المتنوع، والتأكيد على التزام المملكة بالسياحة المستدامة وحماية التراث الثقافي والطبيعي.</div>
+                    <p>كما ناقش الجانبان سبل تعزيز التعاون في مجالات بناء القدرات، وتطوير البيانات السياحية، وإدارة المواقع السياحية، وأكدا أهمية استمرار الشراكة لدعم التنمية السياحية المستدامة وتنمية رأس المال البشري، مع الاتفاق على مواصلة الحوار ودعم المبادرات المشتركة بما يخدم مستقبل القطاع السياحي.</p>
+                `
+            }
+        };
+
+        // دالة إدارة المربعات القابلة للطي
+        function setupNewsBoxes() {
+            const newsBoxes = document.querySelectorAll('.news-box');
+            
+            newsBoxes.forEach(box => {
+                const header = box.querySelector('.news-box-header');
+                const content = box.querySelector('.news-box-content');
+                const icon = box.querySelector('.expand-icon i');
+                
+                header.addEventListener('click', () => {
+                    // إغلاق كل المربعات الأخرى
+                    newsBoxes.forEach(otherBox => {
+                        if (otherBox !== box) {
+                            otherBox.classList.remove('active');
+                            otherBox.querySelector('.news-box-content').classList.remove('expanded');
+                            otherBox.querySelector('.expand-icon i').classList.remove('fa-chevron-up');
+                            otherBox.querySelector('.expand-icon i').classList.add('fa-chevron-down');
+                        }
+                    });
+                    
+                    // فتح/إغلاق المربع الحالي
+                    box.classList.toggle('active');
+                    content.classList.toggle('expanded');
+                    
+                    // تغيير الأيقونة
+                    if (content.classList.contains('expanded')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+            
+            // فتح أول مربع افتراضياً
+            if (newsBoxes.length > 0) {
+                const firstBox = document.getElementById('maghtas-box');
+                if (firstBox) {
+                    firstBox.classList.add('active');
+                    firstBox.querySelector('.news-box-content').classList.add('expanded');
+                    firstBox.querySelector('.expand-icon i').classList.remove('fa-chevron-down');
+                    firstBox.querySelector('.expand-icon i').classList.add('fa-chevron-up');
+                }
+            }
+        }
+
+        // دالة عرض تفاصيل الخبر الجديدة
+        function showNewsDetail(newsId) {
+            // التحقق مما إذا كان الخبر من الأخبار الجديدة أو القديمة
+            let newsDetail;
+            
+            if (newNewsDetails[newsId]) {
+                newsDetail = newNewsDetails[newsId];
+            } else if (window.newsDetails && newsDetails[newsId]) {
+                newsDetail = newsDetails[newsId];
+            }
+            
+            if (!newsDetail) return;
+            
+            const container = document.getElementById('news-detail-container');
+            if (!container) return;
+            
+            container.innerHTML = `
+                <div class="news-detail-content">
+                    <div class="close-detail" onclick="closeNewsDetail()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="detail-header" style="background-image: url('${newsDetail.image}')">
+                        <div class="detail-header-content">
+                            <span class="detail-tag">${newsDetail.category}</span>
+                            <h2 class="detail-title">${newsDetail.title}</h2>
+                            <div class="detail-meta">
+                                <i class="far fa-user"></i>
+                                <span>${newsDetail.author}</span>
+                                <i class="far fa-calendar-alt"></i>
+                                <span>${newsDetail.date}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-body">
+                        ${newsDetail.content || newsDetail}
+                    </div>
+                </div>
+            `;
+            
+            container.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // دالة إغلاق تفاصيل الخبر
+        function closeNewsDetail() {
+            const container = document.getElementById('news-detail-container');
+            if (container) {
+                container.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // دالة تحديث الوقت
+        function updateTime() {
+            const now = new Date();
+            
+            // تنسيق الوقت بشكل جميل
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            // التاريخ الهجري/الميلادي
+            const hijriDate = getHijriDate();
+            const gregorianDate = now.toLocaleDateString('ar-EG', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // تحديث العرض
+            const currentTimeEl = document.getElementById('currentTime');
+            const currentDateEl = document.getElementById('currentDate');
+            
+            if (currentTimeEl) {
+                currentTimeEl.textContent = `${hours}:${minutes}:${seconds}`;
+            }
+            
+            if (currentDateEl) {
+                currentDateEl.innerHTML = `${hijriDate}<br>${gregorianDate}`;
+            }
+        }
+
+        // دالة للحصول على التاريخ الهجري
+        function getHijriDate() {
+            const now = new Date();
+            try {
+                const hijriFormatter = new Intl.DateTimeFormat('ar-EG-u-ca-islamic', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    calendar: 'islamic-umalqura'
+                });
+                
+                const parts = hijriFormatter.formatToParts(now);
+                let day, month, year;
+                
+                parts.forEach(part => {
+                    if (part.type === 'day') day = part.value;
+                    if (part.type === 'month') month = part.value;
+                    if (part.type === 'year') year = part.value;
+                });
+                
+                return `${day} ${month} ${year}هـ`;
+            } catch (error) {
+                const weekdays = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+                const hijriMonths = ['محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة', 
+                                   'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'];
+                
+                const weekday = weekdays[now.getDay()];
+                const day = now.getDate();
+                const month = hijriMonths[now.getMonth()];
+                const year = 1446;
+                
+                return `${weekday} ${day} ${month} ${year}هـ`;
+            }
+        }
+
+        // دالة تحديث الطقس
+        function updateWeather() {
+            try {
+                const jordanWeather = {
+                    "عمان": { 
+                        spring: { min: 15, max: 25, icon: "fa-sun" },
+                        summer: { min: 25, max: 35, icon: "fa-sun" },
+                        autumn: { min: 18, max: 28, icon: "fa-cloud-sun" },
+                        winter: { min: 5, max: 15, icon: "fa-cloud-rain" }
+                    },
+                    "العقبة": {
+                        spring: { min: 22, max: 32, icon: "fa-sun" },
+                        summer: { min: 30, max: 40, icon: "fa-sun" },
+                        autumn: { min: 25, max: 35, icon: "fa-sun" },
+                        winter: { min: 15, max: 25, icon: "fa-cloud-sun" }
+                    },
+                    "إربد": {
+                        spring: { min: 14, max: 24, icon: "fa-cloud-sun" },
+                        summer: { min: 22, max: 32, icon: "fa-sun" },
+                        autumn: { min: 16, max: 26, icon: "fa-cloud-sun" },
+                        winter: { min: 4, max: 14, icon: "fa-cloud-rain" }
+                    }
+                };
+                
+                const now = new Date();
+                const month = now.getMonth();
+                const hour = now.getHours();
+                
+                let season;
+                if (month >= 2 && month <= 4) season = "spring";
+                else if (month >= 5 && month <= 7) season = "summer";
+                else if (month >= 8 && month <= 10) season = "autumn";
+                else season = "winter";
+                
+                const cities = Object.keys(jordanWeather);
+                const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                const cityData = jordanWeather[randomCity][season];
+                
+                let weatherCondition;
+                if (hour >= 6 && hour < 12) {
+                    weatherCondition = "☀️ مشمس";
+                    cityData.icon = "fa-sun";
+                } else if (hour >= 12 && hour < 18) {
+                    weatherCondition = "🌤️ معتدل";
+                    cityData.icon = "fa-cloud-sun";
+                } else if (hour >= 18 && hour < 21) {
+                    weatherCondition = "🌅 مساءً";
+                    cityData.icon = "fa-sunset";
+                } else {
+                    weatherCondition = "🌙 ليلي";
+                    cityData.icon = "fa-moon";
+                }
+                
+                let temp;
+                if (hour >= 22 || hour < 6) {
+                    temp = cityData.min + Math.floor(Math.random() * 3);
+                } else if (hour >= 12 && hour < 16) {
+                    temp = cityData.max - Math.floor(Math.random() * 3);
+                } else {
+                    temp = Math.floor((cityData.min + cityData.max) / 2);
+                }
+                
+                const weatherIconEl = document.getElementById('weatherIcon');
+                const temperatureEl = document.getElementById('temperature');
+                const weatherDescEl = document.getElementById('weatherDesc');
+                const weatherLocationEl = document.getElementById('weatherLocation');
+                
+                if (weatherIconEl) {
+                    weatherIconEl.className = `fas ${cityData.icon} weather-icon`;
+                }
+                
+                if (temperatureEl) {
+                    temperatureEl.textContent = `${temp}°C`;
+                }
+                
+                if (weatherDescEl) {
+                    weatherDescEl.textContent = weatherCondition;
+                }
+                
+                if (weatherLocationEl) {
+                    weatherLocationEl.textContent = randomCity;
+                }
+                
+            } catch (error) {
+                console.error('خطأ في تحديث الطقس:', error);
+                const temp = 22;
+                const weatherIconEl = document.getElementById('weatherIcon');
+                const temperatureEl = document.getElementById('temperature');
+                const weatherDescEl = document.getElementById('weatherDesc');
+                const weatherLocationEl = document.getElementById('weatherLocation');
+                
+                if (weatherIconEl) {
+                    weatherIconEl.className = "fas fa-sun weather-icon";
+                }
+                
+                if (temperatureEl) {
+                    temperatureEl.textContent = `${temp}°C`;
+                }
+                
+                if (weatherDescEl) {
+                    weatherDescEl.textContent = "مشمس";
+                }
+                
+                if (weatherLocationEl) {
+                    weatherLocationEl.textContent = "عمان";
+                }
+            }
+        }
+
+        // تهيئة الموقع عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            // تهيئة السلايدر
+            try {
+                var swiper = new Swiper(".mySwiper", {
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                    loop: true,
+                    effect: 'slide',
+                    speed: 600
+                });
+            } catch (error) {
+                console.error('Swiper error:', error);
+            }
+
+            // تهيئة المربعات القابلة للطي
+            setupNewsBoxes();
+
+            // إغلاق نافذة التفاصيل عند النقر خارجها
+            document.getElementById('news-detail-container')?.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeNewsDetail();
+                }
+            });
+
+            // تهيئة الساعة والطقس
+            updateTime();
+            updateWeather();
+            
+            // تحديث الساعة كل ثانية
+            setInterval(updateTime, 1000);
+            
+            // تحديث الطقس كل 5 دقائق
+            setInterval(updateWeather, 300000);
+
+            // تهيئة تبديل الوضع الداكن
+            initThemeToggle();
+            
+            // تهيئة العداد
+            animateCounters();
+        });
+
+        // وظائف موقعك الأصلية
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleTheme);
+            }
+            
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                updateThemeIcons(true);
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            
+            updateThemeIcons(isDarkMode);
+            
+            if (isDarkMode) {
+                localStorage.setItem('dark-mode', 'enabled');
+            } else {
+                localStorage.setItem('dark-mode', 'disabled');
+            }
+        }
+
+        function updateThemeIcons(isDarkMode) {
+            const icons = document.querySelectorAll('.theme-toggle, .theme-toggle-mobile');
+            icons.forEach(icon => {
+                if (isDarkMode) {
+                    icon.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    icon.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+        }
+
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        setTimeout(updateCounter, 10);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // بيانات تفاصيل الأخبار الأصلية (من موقعك)
         const newsDetails = {
             'tourism-detail-4': {
                 title: 'هيئة تنشيط السياحة تهنئ جلالة الملك بعيد ميلاده الرابع والستون',
@@ -2206,328 +3151,6 @@
                 content: '<p>أعلن بنك كابيتال بنك عن خطة لتوسيع شبكة فروعه في المناطق السياحية الرئيسية، بهدف تقديم خدمات مصرفية أفضل للسياح والمواطنين.</p><p>تشمل الخطة افتتاح 5 فروع جديدة في البتراء، جرش، العقبة، البحر الميت، ووادي رم خلال العام 2025.</p><p>ستوفر الفروع الجديدة خدمات مصرفية باللغات الإنجليزية والعربية والعبرية، مع أجهزة صراف آلي متعددة اللغات.</p><p>ستعمل الفروع أيضاً على توفير خدمات صرف العملات الأجنبية بأسعار تنافسية، وتسهيلات دفع باستخدام البطاقات الدولية.</p>'
             }
         };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                var swiper = new Swiper(".mySwiper", {
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev"
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true
-                    },
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false
-                    },
-                    loop: true,
-                    effect: 'slide',
-                    speed: 600,
-                    preloadImages: true,
-                    lazy: {
-                        loadPrevNext: true
-                    }
-                });
-                console.log('Swiper initialized successfully');
-            } catch (error) {
-                console.error('Failed to initialize Swiper:', error);
-            }
-
-            initThemeToggle();
-            animateCounters();
-            initEventCountdown();
-            setupTicker();
-            setupNavScroll();
-            
-            // تهيئة الساعة والطقس
-            updateTime();
-            updateWeather();
-            
-            // تحديث الساعة كل ثانية
-            setInterval(updateTime, 1000);
-            
-            // تحديث الطقس كل 5 دقائق
-            setInterval(updateWeather, 300000);
-        });
-
-        // دالة تحديث الوقت
-        function updateTime() {
-            const now = new Date();
-            
-            // تنسيق الوقت بشكل جميل
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            
-            // التاريخ الهجري/الميلادي
-            const hijriDate = getHijriDate();
-            const gregorianDate = now.toLocaleDateString('ar-EG', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            
-            // تحديث العرض
-            document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
-            document.getElementById('currentDate').innerHTML = `${hijriDate}<br>${gregorianDate}`;
-        }
-
-        // دالة للحصول على التاريخ الهجري
-        function getHijriDate() {
-            const now = new Date();
-            try {
-                const hijriFormatter = new Intl.DateTimeFormat('ar-EG-u-ca-islamic', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                    calendar: 'islamic-umalqura'
-                });
-                
-                const parts = hijriFormatter.formatToParts(now);
-                let day, month, year;
-                
-                parts.forEach(part => {
-                    if (part.type === 'day') day = part.value;
-                    if (part.type === 'month') month = part.value;
-                    if (part.type === 'year') year = part.value;
-                });
-                
-                return `${day} ${month} ${year}هـ`;
-            } catch (error) {
-                const weekdays = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-                const hijriMonths = ['محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة', 
-                                   'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'];
-                
-                const weekday = weekdays[now.getDay()];
-                const day = now.getDate();
-                const month = hijriMonths[now.getMonth()];
-                const year = 1446;
-                
-                return `${weekday} ${day} ${month} ${year}هـ`;
-            }
-        }
-
-        // دالة تحديث الطقس
-        function updateWeather() {
-            try {
-                const jordanWeather = {
-                    "عمان": { 
-                        spring: { min: 15, max: 25, icon: "fa-sun" },
-                        summer: { min: 25, max: 35, icon: "fa-sun" },
-                        autumn: { min: 18, max: 28, icon: "fa-cloud-sun" },
-                        winter: { min: 5, max: 15, icon: "fa-cloud-rain" }
-                    },
-                    "العقبة": {
-                        spring: { min: 22, max: 32, icon: "fa-sun" },
-                        summer: { min: 30, max: 40, icon: "fa-sun" },
-                        autumn: { min: 25, max: 35, icon: "fa-sun" },
-                        winter: { min: 15, max: 25, icon: "fa-cloud-sun" }
-                    },
-                    "إربد": {
-                        spring: { min: 14, max: 24, icon: "fa-cloud-sun" },
-                        summer: { min: 22, max: 32, icon: "fa-sun" },
-                        autumn: { min: 16, max: 26, icon: "fa-cloud-sun" },
-                        winter: { min: 4, max: 14, icon: "fa-cloud-rain" }
-                    }
-                };
-                
-                const now = new Date();
-                const month = now.getMonth();
-                const hour = now.getHours();
-                
-                let season;
-                if (month >= 2 && month <= 4) season = "spring";
-                else if (month >= 5 && month <= 7) season = "summer";
-                else if (month >= 8 && month <= 10) season = "autumn";
-                else season = "winter";
-                
-                const cities = Object.keys(jordanWeather);
-                const randomCity = cities[Math.floor(Math.random() * cities.length)];
-                const cityData = jordanWeather[randomCity][season];
-                
-                let weatherCondition;
-                if (hour >= 6 && hour < 12) {
-                    weatherCondition = "☀️ مشمس";
-                    cityData.icon = "fa-sun";
-                } else if (hour >= 12 && hour < 18) {
-                    weatherCondition = "🌤️ معتدل";
-                    cityData.icon = "fa-cloud-sun";
-                } else if (hour >= 18 && hour < 21) {
-                    weatherCondition = "🌅 مساءً";
-                    cityData.icon = "fa-sunset";
-                } else {
-                    weatherCondition = "🌙 ليلي";
-                    cityData.icon = "fa-moon";
-                }
-                
-                let temp;
-                if (hour >= 22 || hour < 6) {
-                    temp = cityData.min + Math.floor(Math.random() * 3);
-                } else if (hour >= 12 && hour < 16) {
-                    temp = cityData.max - Math.floor(Math.random() * 3);
-                } else {
-                    temp = Math.floor((cityData.min + cityData.max) / 2);
-                }
-                
-                document.getElementById('weatherIcon').className = `fas ${cityData.icon} weather-icon`;
-                document.getElementById('temperature').textContent = `${temp}°C`;
-                document.getElementById('weatherDesc').textContent = weatherCondition;
-                document.getElementById('weatherLocation').textContent = randomCity;
-                
-            } catch (error) {
-                console.error('خطأ في تحديث الطقس:', error);
-                const temp = 22;
-                document.getElementById('weatherIcon').className = "fas fa-sun weather-icon";
-                document.getElementById('temperature').textContent = `${temp}°C`;
-                document.getElementById('weatherDesc').textContent = "مشمس";
-                document.getElementById('weatherLocation').textContent = "عمان";
-            }
-        }
-
-        function initThemeToggle() {
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-            
-            if (themeToggle) {
-                themeToggle.addEventListener('click', toggleTheme);
-            }
-            
-            if (themeToggleMobile) {
-                themeToggleMobile.addEventListener('click', toggleTheme);
-            }
-            
-            if (localStorage.getItem('dark-mode') === 'enabled') {
-                document.body.classList.add('dark-mode');
-                updateThemeIcons(true);
-            }
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            
-            updateThemeIcons(isDarkMode);
-            
-            if (isDarkMode) {
-                localStorage.setItem('dark-mode', 'enabled');
-            } else {
-                localStorage.setItem('dark-mode', 'disabled');
-            }
-        }
-
-        function updateThemeIcons(isDarkMode) {
-            const icons = document.querySelectorAll('.theme-toggle, .theme-toggle-mobile');
-            icons.forEach(icon => {
-                if (isDarkMode) {
-                    icon.innerHTML = '<i class="fas fa-sun"></i>';
-                } else {
-                    icon.innerHTML = '<i class="fas fa-moon"></i>';
-                }
-            });
-        }
-
-        function showNewsDetail(newsId) {
-            const newsDetail = newsDetails[newsId];
-            if (!newsDetail) return;
-            
-            const container = document.getElementById('news-detail-container');
-            if (!container) return;
-            
-            container.innerHTML = `
-                <div class="news-detail-content">
-                    <div class="close-detail" onclick="closeNewsDetail()">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <div class="detail-header" style="background-image: url('${newsDetail.image}')">
-                        <div class="detail-header-content">
-                            <span class="detail-tag">${newsDetail.category}</span>
-                            <h2 class="detail-title">${newsDetail.title}</h2>
-                            <div class="detail-meta">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>${newsDetail.date}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="detail-body">
-                        ${newsDetail.content}
-                    </div>
-                </div>
-            `;
-            
-            container.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeNewsDetail() {
-            const container = document.getElementById('news-detail-container');
-            if (container) {
-                container.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        document.getElementById('news-detail-container')?.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeNewsDetail();
-            }
-        });
-
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-count');
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.floor(current);
-                        setTimeout(updateCounter, 10);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
-
-        function setupTicker() {
-            const ticker = document.querySelector('.ticker-content ul');
-            if (ticker) {
-                const items = ticker.querySelectorAll('li');
-                items.forEach(item => {
-                    item.addEventListener('click', () => {
-                        alert(`قراءة الخبر: ${item.textContent}`);
-                    });
-                });
-            }
-        }
-
-        function setupNavScroll() {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        }
-
-        function initEventCountdown() {
-            console.log('Event countdown initialized');
-        }
-
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
     </script>
 </body>
 </html>
