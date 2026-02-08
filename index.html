@@ -590,6 +590,17 @@
             .gulf-banner-container {
                 max-height: 100px;
             }
+            
+            /* تعديل حجم الشعار في الهيدر للجوال */
+            .logo-img {
+                max-height: 50px !important;
+            }
+            
+            /* تعديل حجم الشعار في الفوتر للجوال */
+            .footer-logo-img {
+                width: 80px !important;
+                height: 80px !important;
+            }
         }
 
         /* ربط مع الأنماط الموجودة */
@@ -665,6 +676,15 @@
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+        
+        /* شعار الموقع الجديد في الهيدر */
+        .logo-img {
+            height: 80px;
+            width: auto;
+            max-height: 100px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         .logo-text h1 {
@@ -1458,8 +1478,8 @@
         }
 
         .footer-logo-img {
-            width: 60px;
-            height: 60px;
+            width: 120px;
+            height: 120px;
             background-color: #fff;
             border-radius: 6px;
             display: flex;
@@ -1473,6 +1493,7 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            display: block;
         }
 
         .footer-about p {
@@ -1770,8 +1791,8 @@
                 max-height: 120px !important;
             }
 
-            .logo-text h1 {
-                font-size: 1.6rem;
+            .logo-img {
+                max-height: 70px !important;
             }
 
             .article-image {
@@ -1817,8 +1838,8 @@
                 max-height: 90px !important;
             }
 
-            .logo-text h1 {
-                font-size: 1.4rem;
+            .logo-img {
+                max-height: 60px !important;
             }
 
             nav ul {
@@ -1844,6 +1865,11 @@
             
             .gulf-banner-container {
                 max-height: 80px;
+            }
+            
+            .footer-logo-img {
+                width: 100px !important;
+                height: 100px !important;
             }
         }
 
@@ -1891,9 +1917,8 @@
         <div class="header-container">
             <div class="logo-section">
                 <div class="logo">
-                    <div class="logo-text">
-                        <h1>الماسة نيوز</h1>
-                    </div>
+                    <!-- شعار الموقع الجديد -->
+                    <img src="https://i.ibb.co/RZ4JFVY/image.jpg" alt="شعار الموقع" class="logo-img" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
                 </div>
             </div>
             <!-- بنر السياحة (تم تصغيره) -->
@@ -2832,10 +2857,8 @@
             <div class="footer-about">
                 <div class="footer-logo">
                     <div class="footer-logo-img">
-                        <img src="https://i.ibb.co/dscgRBbt/IMG-20260126-WA0002.jpg" alt="شعار أردننا جنة" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
-                    </div>
-                    <div class="footer-logo-text">
-                        <h3>الماسة نيوز</h3>
+                        <!-- شعار الموقع الجديد في الفوتر -->
+                        <img src="https://i.ibb.co/RZ4JFVY/image.jpg" alt="شعار الموقع" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80'">
                     </div>
                 </div>
                 <p>نافذتكم الإخبارية الأولى على أخبار السياحة والاقتصاد في الأردن، نقدم لكم آخر المستجدات والتطورات في القطاعات السياحية والاقتصادية الأردنية.</p>
@@ -2868,7 +2891,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>جميع الحقوق محفوظة © الماسة نيوز 2025</p>
+            <p>جميع الحقوق محفوظة © 2025</p>
         </div>
     </footer>
 
@@ -3007,7 +3030,7 @@
                     category: 'خبر',
                     date: new Date().toLocaleDateString('ar-EG'),
                     image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1364&q=80',
-                    author: 'الماسة نيوز',
+                    author: 'موقع الأخبار',
                     content: '<p>تفاصيل هذا الخبر غير متاحة حاليًا. نحن نعمل على تحديث المحتوى قريبًا.</p>'
                 };
             }
@@ -3026,7 +3049,7 @@
                             <h2 class="detail-title">${newsDetail.title}</h2>
                             <div class="detail-meta">
                                 <i class="far fa-user"></i>
-                                <span>${newsDetail.author || 'الماسة نيوز'}</span>
+                                <span>${newsDetail.author || 'موقع الأخبار'}</span>
                                 <i class="far fa-calendar-alt"></i>
                                 <span>${newsDetail.date}</span>
                             </div>
